@@ -1,0 +1,8 @@
+version: "3"
+services:
+  webmap:
+    image: reborntc/webmap
+    container_name: webmap
+    volumes:
+      - ./tmp:/opt/xml
+    restart: unless-stopped
