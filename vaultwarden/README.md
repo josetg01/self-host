@@ -11,9 +11,9 @@ mkdir -p data
 ```
 
 
-Mientras que si has elegido Traefik,
+Mientras que si has elegido Caddy,
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.traefik.yml up -d
+docker-compose -f docker-compose.yml -f docker-compose.caddy.yml up -d
 docker-compose logs -f
 ```
