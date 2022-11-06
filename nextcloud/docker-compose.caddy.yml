@@ -1,13 +1,7 @@
-version: '3'
+version: "3"
 
 services:
-  nextcloud:
-    networks:
-      - proxy
+  web:
     labels:
       - caddy="${FQDN}"
-      - caddy.reverse_proxy="{{upstreams 443}}"
-
-networks:
-  proxy:
-    external: true
+      - caddy.reverse_proxy="{{upstreams 80}}"
