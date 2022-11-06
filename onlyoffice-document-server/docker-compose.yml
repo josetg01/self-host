@@ -1,0 +1,12 @@
+version: '3'
+services:
+  onlyoffice-document-server:
+    container_name: onlyoffice-document-server
+    image: onlyoffice/documentserver:latest
+    restart: always
+    environment:
+      - JWT_ENABLED=false
+    volumes:
+      - ./data:/var/www/onlyoffice/Data
+      - ./logs:/var/log/onlyoffice
+      - ./db:/var/lib/postgresql
