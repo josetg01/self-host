@@ -1,0 +1,17 @@
+version: '3'
+wordpress:
+  image: yobasystems/alpine-php-wordpress
+  expose:
+    - "80"
+  volumes:
+    - ./www:/usr/html
+  restart: always
+  links:
+    - mysql:mysql
+mysql:
+  environment:
+    MYSQL_DATABASE: wordpressdb
+    MYSQL_PASSWORD: wordpresspass
+    MYSQL_ROOT_PASSWORD: ''
+    MYSQL_USER: wordpressuser
+  image: yobasystems/alpine-mariadb

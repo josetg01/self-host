@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  wordpress:
+    networks:
+      - proxy
+    labels:
+      - caddy="${VIRTUAL_HOST}"
+      - caddy.reverse_proxy="{{upstreams 80}}"
+
+networks:
+  proxy:
+    external: true
