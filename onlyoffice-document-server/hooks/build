@@ -1,3 +1,0 @@
-#!/bin/bash
-export TAG=$DOCKER_TAG
-docker-compose -f ${BUILD_FILE}.yml build 
